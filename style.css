@@ -1,101 +1,142 @@
 /* set default font family and size */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-}
-
-/* style header and navigation menu */
-header {
-  background-color: #333;
+  }
+  
+  /* CSS styles for the photo section */
+  #photo {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 50px 0;
+  }
+  
+  .photo-container {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .photo-container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #4e8cff, #5ee5ff);
+    opacity: 0.8;
+    z-index: 1;
+  }
+  
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* style header and navigation menu */
+  header {
+  background: linear-gradient(to right,#333, #8f8f8f);
   color: #fff;
   padding: 20px;
   text-align: center;
-}
-
-nav ul {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul {
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-nav li {
-  display: inline-block;
+  }
+  
+  nav li {
   margin-right: 20px;
-}
-
-nav a {
+  }
+  
+  nav a {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-nav a:hover {
+  }
+  
+  nav a:hover {
   color: #ffd700;
-}
-
-/* style main content sections */
-section {
-  padding: 5px 20px;
+  }
+  
+  /* style main content sections */
+  section {
+  padding: 20px;
   text-align: left;
-}
-
-section h2 {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  }
+  
+  section h2 {
   font-size: 28px;
   margin-bottom: 20px;
-}
-
-section ul {
+  }
+  
+  section ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-section li {
+  }
+  
+  section li {
   margin-bottom: 10px;
-}
-
-/* style contact form */
-form label {
+  }
+  
+  /* style contact form */
+  form label {
   display: block;
   margin-bottom: 10px;
-}
-
-form input,
-form textarea {
+  }
+  
+  form input,
+  form textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 100%;
   margin-bottom: 20px;
-}
-
-form button {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  form button {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #4c77b3;
   color: #fff;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #ffd700;
-  color: #333;
-}
-
-/*アコーディオン全体*/
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  form button:hover {
+  background-color: #6493c3;
+  }
+  
+/* accordion */
 .menu {
   width: 100%;
   padding: 10px 10px 20px;
 }
+
 .menu input {
-  display: none; /*チェックボックスを隠す*/
+  display: none; /* hide the checkbox */
 }
 
-/*バー部分*/
+/* bar section */
 .menu label {
-  cursor :pointer;
+  cursor: pointer;
   display: block;
   text-decoration: none;
   color: #fff;
@@ -106,36 +147,39 @@ form button:hover {
   background-color: #333;
 }
 
-/*開いたときに表示される部分*/
+/* content section */
 .menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
   margin-bottom: 1px;
 }
+
 .menu li {
   height: 0;
   overflow-y: hidden;
-  transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+  transition: padding-bottom 0.5s, padding-top 0.5s; /* closing animation */
   -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
   -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
   -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
   -o-transition: padding-bottom 0.5s, padding-top 0.5s;
 }
+
 #menu_bar01:checked ~ #links01 li,
 #menu_bar02:checked ~ #links02 li {
-  height: auto; /*開いたときに表示されるliの高さ*/
+  height: auto; /* height of opened li */
   opacity: 1;
   background: #f1f1f1;
   padding: 10px;
 }
- /*開いたときの下の余白*/
+
+/* bottom margin of the opened section */
 #menu_bar01:checked ~ #links01 li:last-child,
 #menu_bar02:checked ~ #links02 li:last-child {
   margin-bottom: 20px;
 }
 
-/*閉じた状態の矢印描画*/
+/* arrow icon for the closed state */
 .menu label:after{
   content:"";
   display:block;
@@ -152,7 +196,8 @@ form button:hover {
   bottom: 15%;
   margin: auto;
 }
-/*開いた状態の矢印描画*/
+
+/* arrow icon for the opened state */
 .menu input[type=checkbox]:checked + label:after{
   content:"";
   display:block;
@@ -169,3 +214,34 @@ form button:hover {
   bottom: 0;
   margin: auto;
 }
+
+/* table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+th {
+  background-color: #eee;
+  text-align: left;
+  padding: 0.5em;
+}
+
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.footer {
+	background-color: #232323;
+	color: #fff;
+	padding: 60px 0;
+	padding-left: 20px;
+	font-size: 18px;
+}
+
