@@ -35,8 +35,8 @@ nav a:hover {
 
 /* style main content sections */
 section {
-  padding: 50px 20px;
-  text-align: center;
+  padding: 5px 20px;
+  text-align: left;
 }
 
 section h2 {
