@@ -245,3 +245,7 @@ tr:nth-child(even) {
 	font-size: 18px;
 }
 
+#profile li a[href*="linkedin"] img {
+  width: 100px;
+  height: 100px;
+}
